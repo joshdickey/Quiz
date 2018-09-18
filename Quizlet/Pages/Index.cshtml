@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            <fieldset>
+                What is your Favorite Color?
+                <br />
+                <input name="color" type="radio" id="green" value="green"/> Green
+                
+                <br />
+                <input name="color" type="radio" id="red" /> Red
+                <br />
+                <input name="color" type="radio" id="black" />Black
+                
+            </fieldset>
+            <input type="button" id="sendButton" value="Send Answer" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            <ul id="answerList"></ul>
+        </div>
+    </div>
+</div>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/answer.js"></script>
