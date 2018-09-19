@@ -4,12 +4,21 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/answerHub").build(
 
 connection.on("ReceiveMessage", function (green, red, black) {
 
-    var msg = "Green: " + green + " Red: " + red + " Black: " + black;
+ //   var msg = "Green: " + green + " Red: " + red + " Black: " + black;
+
+ //   var encodedMsg = msg;
+//      var li = document.createElement("li");
+ //   li.textContent = encodedMsg;
+ //   document.getElementById("answerList").appendChild(li);
+
+    greenAnswer = green;
+    redAnswers = red;
+    blackAnswers = black;
+    console.log(" from answers.js: Green: " + green + " Red: " + red + " Black: " + black);
+
+    updateChart(green, red, black);
+
     
-    var encodedMsg = msg;
-    var li = document.createElement("li");
-    li.textContent = encodedMsg;
-    document.getElementById("answerList").appendChild(li);
 });
 
 connection.start().catch(function (err) {
@@ -38,3 +47,4 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     });
     event.preventDefault();
 });
+

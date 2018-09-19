@@ -1,8 +1,10 @@
 ﻿@page
 @model IndexModel
+
 @{
     ViewData["Title"] = "Home page";
 }
+
 
 <div class="container">
     <div class="row">&nbsp;</div>
@@ -12,13 +14,13 @@
             <fieldset>
                 What is your Favorite Color?
                 <br />
-                <input name="color" type="radio" id="green" value="green"/> Green
-                
+                <input name="color" type="radio" id="green" value="green" /> Green
+
                 <br />
                 <input name="color" type="radio" id="red" /> Red
                 <br />
                 <input name="color" type="radio" id="black" />Black
-                
+
             </fieldset>
             <input type="button" id="sendButton" value="Send Answer" />
         </div>
@@ -28,12 +30,45 @@
             <hr />
         </div>
     </div>
-    <div class="row">
-        <div class="col-6">&nbsp;</div>
-        <div class="col-6">
-            <ul id="answerList"></ul>
-        </div>
-    </div>
+    <!-- <div class="row">
+         <div class="col-6">&nbsp;</div>
+         <div class="col-6">
+             <ul id="answerList"></ul>
+         </div>
+
+     </div>-->
+
+    <div id="chartContainer"></div>
+
+
 </div>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    var newChart = new CanvasJS.Chart("chartContainer");
+    var greenAnswer = @Model.Data.green;
+    var redAnswers = @Model.Data.red;
+    var blackAnswers = @Model.Data.black;
+    var series = {
+        type: "column",
+        name: "Answers",
+    };
+
+    window.onload = function () {
+
+        loadChart(newChart, series, greenAnswer, redAnswers, blackAnswers);
+       
+    }
+
+
+
+</script>
+
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
-<script src="~/js/answer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="~/js/answer.js"></script>
+<script type="text/javascript" src="~/js/chart.js"></script>
+
+

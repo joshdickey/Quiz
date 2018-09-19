@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "8d19439ef22c432fe18f0eac697c8789fe30c00a"
+    "signature": "79854e5c353b8b6b137de42d5c46592cdd6c8ffe"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "Quizlet/1.0.0": {
         "dependencies": {
+          "Chart.js": "2.7.2",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0"
         },
@@ -34,6 +35,7 @@
           "Quizlet.dll": {}
         }
       },
+      "Chart.js/2.7.2": {},
       "Microsoft.NETCore.App/2.1.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.1.0",
@@ -3155,6 +3157,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Chart.js/2.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9viXL8gDXS/gjJ6DRhVsjgPnl/YMhNw0vLSPLW7aGgOL4PP+Pu/q5QZ8iquew13DeN440Ltu6He9/iD1NJd8WA==",
+      "path": "chart.js/2.7.2",
+      "hashPath": "chart.js.2.7.2.nupkg.sha512"
     },
     "Microsoft.NETCore.App/2.1.0": {
       "type": "package",
